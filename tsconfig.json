@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@app/css": [
+         "./libs/assets/styles/*"
+      ]
+    }
+  }
+}

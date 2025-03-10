@@ -1,0 +1,11 @@
+{
+  "name": "HorizonOne",
+  "author": "charlie.l1u@outlook.com",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.6",
+    "tailwindcss": "^4.0.6"
+  },
+  "dependencies": {
+    "lucide-react": "^0.475.0"
+  }
+}
