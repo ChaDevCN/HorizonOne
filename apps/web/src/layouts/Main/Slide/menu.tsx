@@ -47,6 +47,71 @@ const menuDatas = [
 		]
 	},
 	{
+		path: '/feedback',
+		title: '意见反馈',
+		icon: 'CommentOutlined',
+		show: true,
+		children: [
+			{
+				path: '/feedback/list',
+				title: '反馈列表',
+				icon: 'UnorderedListOutlined',
+				show: true,
+				children: []
+			},
+			{
+				path: '/feedback/statistics',
+				title: '反馈统计',
+				icon: 'BarChartOutlined',
+				show: true,
+				children: []
+			},
+			{
+				path: '/feedback/settings',
+				title: '反馈设置',
+				icon: 'SettingOutlined',
+				show: true,
+				children: []
+			}
+		]
+	},
+	{
+		path: '/maintenance',
+		title: '全球维保',
+		icon: 'GlobalOutlined',
+		show: true,
+		children: [
+			{
+				path: '/maintenance/records',
+				title: '维保记录',
+				icon: 'FileTextOutlined',
+				show: true,
+				children: []
+			},
+			{
+				path: '/maintenance/schedule',
+				title: '维保计划',
+				icon: 'ScheduleOutlined',
+				show: true,
+				children: []
+			},
+			{
+				path: '/maintenance/facilities',
+				title: '设备管理',
+				icon: 'ToolOutlined',
+				show: true,
+				children: []
+			},
+			{
+				path: '/maintenance/teams',
+				title: '维保团队',
+				icon: 'TeamOutlined',
+				show: true,
+				children: []
+			}
+		]
+	},
+	{
 		path: '/user',
 		title: '用户管理',
 		icon: 'UserOutlined',
@@ -154,11 +219,11 @@ function SlideMenu() {
 		return <Link to={menu.path}>{menu.title}</Link>;
 	};
 
-	const treeMenuData = useCallback((menus): MenuItemType[] => {
-		return menus.map((menu: MenuType) => {
+	const treeMenuData = useCallback((menus: MenuObj[]): MenuItemType[] => {
+		return menus.map((menu: MenuObj) => {
 			const children = menu?.children?.filter((menu) => menu.show) || [];
 			return {
-				key: menu.path,
+				key: menu.path || '',
 				label: getMenuTitle(menu),
 				icon:
 					menu.icon &&
@@ -170,7 +235,7 @@ function SlideMenu() {
 	}, []);
 
 	const menuData = useMemo(() => {
-		return treeMenuData(menuDatas.filter((menu) => menu.show) || []);
+		return treeMenuData(menuDatas?.filter((menu) => menu.show) || []);
 	}, [menuDatas]);
 
 	return (

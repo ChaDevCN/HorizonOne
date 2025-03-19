@@ -26,12 +26,12 @@ const __mock = {
 			name: 'Dashboard',
 			icon: 'DashboardOutlined', // Ant Design 图标名称
 			type: 1,
-			route: '/dashboard',
+			route: 'dashboard/overview',
 			filePath: './Dashboard/index.tsx',
 			orderNumber: 1,
-			url: '/dashboard',
+			url: '/dashboard/overview',
 			show: true,
-			path: '/dashboard',
+			path: '/dashboard/overview',
 			parentPaths: ['/'],
 			authCode: 'DASHBOARD_VIEW',
 			curVersion: '1.0.0'
